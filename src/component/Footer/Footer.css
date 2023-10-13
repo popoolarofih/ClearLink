@@ -50,6 +50,7 @@
 
 .socials{
     display: flex;
+    color: #667085;
     align-items: center;
     gap: 1rem;
 }
