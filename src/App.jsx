@@ -6,6 +6,8 @@ import Hero from "./component/Hero/Hero";
 import OtherCompanies from "./component/OtherCompanies/OtherCompanies";
 import WhyClearLink from "./component/WhyClearLink/WhyClearLink";
 import Shopify from "./component/Shopify/Shopify";
+import Faqs from "./component/FAQS/Faqs";
+import CTA from "./component/CTA/CTA";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +19,8 @@ function App() {
       <OtherCompanies />
       <WhyClearLink />
       <Shopify />
+      <Faqs />
+      <CTA />
     </>
   );
 }
