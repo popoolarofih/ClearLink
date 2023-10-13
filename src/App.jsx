@@ -8,6 +8,7 @@ import WhyClearLink from "./component/WhyClearLink/WhyClearLink";
 import Shopify from "./component/Shopify/Shopify";
 import Faqs from "./component/FAQS/Faqs";
 import CTA from "./component/CTA/CTA";
+import Footer from "./component/Footer/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App() {
       <Shopify />
       <Faqs />
       <CTA />
+      <Footer />
     </>
   );
 }
