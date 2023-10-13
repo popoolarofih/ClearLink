@@ -1,8 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Faqs.css";
 import Plus from "../../Images/plus-circle.png";
+import Minus from "../../Images/minus-circle.png";
 
 function Faqs() {
+  const data = [
+    {
+      question: "How many participants can join a ClearLink video conference?",
+      answer:
+        "ClearLink offers flexible meeting options. Depending on your subscription plan, you can host meetings with varying numbers of participants. Our plans are designed to accommodate small team collaborations and large-scale webinars, ensuring you have the right fit for your needs.",
+    },
+    {
+      question: "Can I use ClearLink on multiple devices? ",
+      answer:
+        "ClearLink offers flexible meeting options. Depending on your subscription plan, you can host meetings with varying numbers of participants. Our plans are designed to accommodate small team collaborations and large-scale webinars, ensuring you have the right fit for your needs.",
+    },
+    {
+      question:
+        "Is ClearLink compatible with other video conferencing platforms?",
+      answer:
+        "ClearLink offers flexible meeting options. Depending on your subscription plan, you can host meetings with varying numbers of participants. Our plans are designed to accommodate small team collaborations and large-scale webinars, ensuring you have the right fit for your needs.",
+    },
+    {
+      question:
+        "How does ClearLink ensure the security of my video conferences?",
+      answer:
+        "ClearLink offers flexible meeting options. Depending on your subscription plan, you can host meetings with varying numbers of participants. Our plans are designed to accommodate small team collaborations and large-scale webinars, ensuring you have the right fit for your needs.",
+    },
+    {
+      question: "Do I need to download any software to use ClearLink? ",
+      answer:
+        "ClearLink offers flexible meeting options. Depending on your subscription plan, you can host meetings with varying numbers of participants. Our plans are designed to accommodate small team collaborations and large-scale webinars, ensuring you have the right fit for your needs.",
+    },
+    {
+      question: "What kind of customer support does ClearLink provide?",
+      answer:
+        "ClearLink offers flexible meeting options. Depending on your subscription plan, you can host meetings with varying numbers of participants. Our plans are designed to accommodate small team collaborations and large-scale webinars, ensuring you have the right fit for your needs.",
+    },
+  ];
+
+  const [selected, setSelected] = useState(null);
+
+  const toggle = (i) => {
+    if (selected === i) {
+      return setSelected(null);
+    }
+
+    setSelected(i);
+  };
+
   return (
     <div className="app__faqs">
       <div className="faqs__one">
@@ -14,102 +60,19 @@ function Faqs() {
         </p>
       </div>
       <div className="faqs__two">
-        <div className="faqs__box">
-          <div>
-            <h3>
-              How many participants can join a ClearLink video conference?
-            </h3>
-            <p>
-              ClearLink offers flexible meeting options. Depending on your
-              subscription plan, you can host meetings with varying numbers of
-              participants. Our plans are designed to accommodate small team
-              collaborations and large-scale webinars, ensuring you have the
-              right fit for your needs.
-            </p>
-          </div>
-          <div>
-            <img src={Plus} />
-          </div>
-        </div>
-        <div className="faqs__box">
-          <div>
-            <h3>Can I use ClearLink on multiple devices? </h3>
-            <p>
-              ClearLink offers flexible meeting options. Depending on your
-              subscription plan, you can host meetings with varying numbers of
-              participants. Our plans are designed to accommodate small team
-              collaborations and large-scale webinars, ensuring you have the
-              right fit for your needs.
-            </p>
-          </div>
-          <div>
-            <img src={Plus} />
-          </div>
-        </div>
-        <div className="faqs__box">
-          <div>
-            <h3>
-              Is ClearLink compatible with other video conferencing platforms?{" "}
-            </h3>
-            <p>
-              ClearLink offers flexible meeting options. Depending on your
-              subscription plan, you can host meetings with varying numbers of
-              participants. Our plans are designed to accommodate small team
-              collaborations and large-scale webinars, ensuring you have the
-              right fit for your needs.
-            </p>
-          </div>
-          <div>
-            <img src={Plus} />
-          </div>
-        </div>
-        <div className="faqs__box">
-          <div>
-            <h3>
-              How does ClearLink ensure the security of my video conferences?{" "}
-            </h3>
-            <p>
-              ClearLink offers flexible meeting options. Depending on your
-              subscription plan, you can host meetings with varying numbers of
-              participants. Our plans are designed to accommodate small team
-              collaborations and large-scale webinars, ensuring you have the
-              right fit for your needs.
-            </p>
-          </div>
-          <div>
-            <img src={Plus} />
-          </div>
-        </div>
-        <div className="faqs__box">
-          <div>
-            <h3>Do I need to download any software to use ClearLink? </h3>
-            <p>
-              ClearLink offers flexible meeting options. Depending on your
-              subscription plan, you can host meetings with varying numbers of
-              participants. Our plans are designed to accommodate small team
-              collaborations and large-scale webinars, ensuring you have the
-              right fit for your needs.
-            </p>
-          </div>
-          <div>
-            <img src={Plus} />
-          </div>
-        </div>
-        <div className="faqs__box">
-          <div>
-            <h3>What kind of customer support does ClearLink provide? </h3>
-            <p>
-              ClearLink offers flexible meeting options. Depending on your
-              subscription plan, you can host meetings with varying numbers of
-              participants. Our plans are designed to accommodate small team
-              collaborations and large-scale webinars, ensuring you have the
-              right fit for your needs.
-            </p>
-          </div>
-          <div>
-            <img src={Plus} />
-          </div>
-        </div>
+        {data.map((dat, i) => {
+          return (
+            <div className={selected === i ? "item" : "faqs__box"}>
+              <div>
+                <h3 onClick={() => toggle(i)}>{dat.question}</h3>
+                <p className={selected === i ? "show" : "content"}>{dat.answer}</p>
+              </div>
+              <div>
+                <img onClick={() => toggle(i)} src={selected === i ? Minus : Plus} />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

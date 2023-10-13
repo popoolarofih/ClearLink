@@ -76,12 +76,14 @@
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
+  margin-left: 5px;
   /* 150% */
 }
 
 .star-row {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .Hero-image-display {
@@ -89,7 +91,7 @@
   border: 1px solid var(--blue-200, #b2ddff);
   background: var(--blue-50, #eff8ff);
   /* Shadow/3xl */
-  box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+  /* box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14); */
   display: flex;
   padding: 32px;
   flex-direction: column;
@@ -100,6 +102,7 @@
   height: 79%;
   gap: 10px;
   margin-top: 20px;
+  box-shadow: 0px 7px 20px -4px rgba(16, 24, 40, 0.14);
   /* height: %; */
 }
 
